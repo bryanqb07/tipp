@@ -87,10 +87,10 @@ struct SelectCategories: View {
 
 class getCategoriesData: ObservableObject {
     @Published var categories = [category]()
-    
+
     init(){
         let db = Firestore.firestore()
-        
+
         db.collection("categories").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print(err.localizedDescription)
@@ -99,7 +99,7 @@ class getCategoriesData: ObservableObject {
             for document in querySnapshot!.documents {
                 let id = document.documentID
                 let name = document.get("Name") as! String
-                
+
                 self.categories.append(category(id: id, name: name))
                 print(id)
                 print(name)
@@ -107,12 +107,6 @@ class getCategoriesData: ObservableObject {
         }
     }
 }
-
-struct category: Identifiable {
-    var id: String
-    var name: String
-}
-
 
 
 struct SelectCategories_Previews: PreviewProvider {

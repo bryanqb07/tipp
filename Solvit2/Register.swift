@@ -12,6 +12,7 @@ import FirebaseAuth
 
 
 struct Register: View {
+    @EnvironmentObject var session: FirebaseSession
     @State private var email = ""
     @State private var password = ""
     @State private var confirmedPassword = ""
@@ -47,13 +48,14 @@ struct Register: View {
                 NavigationLink(destination: SelectCategories(), tag: 1, selection: $selection) {
                     Button(action: {
                         if(self.password == self.confirmedPassword){
-                            Auth.auth().createUser(withEmail: self.email, password: self.password) { authResult, error in
+                            self.session.signUp(email: self.email, password: self.password) { authResult, error in
                                 if let registrationError = error {
                                     print(registrationError)
                                     return
                                 }
                                 
-                                print(authResult ?? "no result")
+                                self.session.createUser()
+                                
 //                                let db = Firestore.firestore()
 //                                db.collection("users").document("LA").setData([
 //                                    "email": self.email

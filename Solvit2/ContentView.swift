@@ -10,41 +10,33 @@ import SwiftUI
 
 struct ContentView: View {
     //MARK: Properties
-//    @ObservedObject var session = FirebaseSession()
+    @EnvironmentObject var session: FirebaseSession
     
     var body: some View {
-       Register()
+        NavigationView {
+            Group {
+                if session.session != nil {
+                    VStack {
+                        Text("Hello world")
+                    }
+                } else {
+                    Login()
+                    .navigationBarItems(trailing: Text(""))
+                }
+            }
+            .onAppear(perform: getUser)
+            .navigationBarTitle(Text("TODO"))
+            .padding()
+        }
     }
-//        VStack(alignment: .leading) {
-//            ForEach(session.categories) {
-//                Text("\($0.name)")
-//            }
-//
-//            Text("Ready or not, here I come!")
-//        }.onAppear {
-//            self.session.getCategories()
-//        }
-//        NavigationView {
-//            Group {
-//                if session.session != nil {
-//                    VStack {
-//                        Text("Hello world")
-//                    }
-//                } else {
-//                    Login()
-//                    .navigationBarItems(trailing: Text(""))
-//                }
-//            }
-//            .onAppear(perform: getUser)
-//            .navigationBarTitle(Text("TODO"))
-//            .padding()
-//        }
-}
         
-    //MARK: Functions
-//    func getUser() {
-//        session.listen()
-//    }
+        //MARK: Functions
+        func getUser() {
+            session.listen()
+        }
+    }
+        
+
 
 
 
