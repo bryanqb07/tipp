@@ -17,7 +17,7 @@ struct ContentView: View {
             Group {
                 if session.session != nil {
                     VStack {
-                        Text("Hello world")
+                        AnswerView()
                     }
                 } else {
                     Login()
@@ -25,7 +25,7 @@ struct ContentView: View {
                 }
             }
             .onAppear(perform: getUser)
-            .navigationBarTitle(Text("TODO"))
+            .navigationBarTitle(Text("Home"))
             .padding()
         }
     }

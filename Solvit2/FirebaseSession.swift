@@ -16,6 +16,7 @@ class FirebaseSession: ObservableObject {
     @Published var session: User?
     @Published var isLoggedIn: Bool?
     @Published var categories: [category] = []
+    @Published var questions: [question] = []
 
     var db = Firestore.firestore()
     
@@ -25,7 +26,6 @@ class FirebaseSession: ObservableObject {
             if let user = user {
                 self.session = User(uid: user.uid, displayName: user.displayName, email: user.email)
                 self.isLoggedIn = true
-                self.getCategories()
             } else {
                 self.isLoggedIn = false
                 self.session = nil
@@ -65,7 +65,29 @@ class FirebaseSession: ObservableObject {
         }
     }
     
-    func createUser() {
+    func getQuestions() {
+        _ = db.collection("questions").whereField("active", isEqualTo: true).addSnapshotListener { querySnapshot, error in
+            if let error = error {
+                print("Error retreiving collection: \(error)")
+            }
+            
+            self.questions = []
+            
+            for document in querySnapshot!.documents {
+                let id = document.documentID
+                let text = document.get("text") as! String
+                let asker = document.get("asker") as! String
+                let category = document.get("category") as! String
+
+                self.questions.append(question(id: id, text: text, asker: asker, category: category))
+                print(id)
+                print(asker)
+                print(text)
+            }
+        }
+    }
+    
+    func createUser(completionHandler: @escaping () -> Void) {
         let data = ["id": session?.uid, "email": session?.email]
         db.collection("users").addDocument(data: data) { err in
             if let err = err {

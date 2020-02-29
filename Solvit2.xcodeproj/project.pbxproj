@@ -21,10 +21,14 @@
 		095E418F23F6B35700DEA54F /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095E418E23F6B35700DEA54F /* Messages.swift */; };
 		095E419123F6B35E00DEA54F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095E419023F6B35E00DEA54F /* Notifications.swift */; };
 		095E419323F6B36600DEA54F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095E419223F6B36600DEA54F /* UserProfile.swift */; };
+		0961CC9E24090A2500DC63CB /* AskQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961CC9D24090A2500DC63CB /* AskQuestionView.swift */; };
+		0961CCA024090E9200DC63CB /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961CC9F24090E9200DC63CB /* AnswerView.swift */; };
+		0961CCA224090FDB00DC63CB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961CCA124090FDB00DC63CB /* Question.swift */; };
 		09703EDB2400D421003BA478 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09703EDA2400D421003BA478 /* GoogleService-Info.plist */; };
 		098D06CE2404EB6400DE702B /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098D06CD2404EB6400DE702B /* FirebaseSession.swift */; };
 		098D06D02404EBF600DE702B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098D06CF2404EBF600DE702B /* Category.swift */; };
 		098D06D22404EC2C00DE702B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098D06D12404EC2C00DE702B /* User.swift */; };
+		09E08FBD240A03B700D13CA4 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E08FBC240A03B700D13CA4 /* Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,10 +47,14 @@
 		095E418E23F6B35700DEA54F /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		095E419023F6B35E00DEA54F /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		095E419223F6B36600DEA54F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		0961CC9D24090A2500DC63CB /* AskQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskQuestionView.swift; sourceTree = "<group>"; };
+		0961CC9F24090E9200DC63CB /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		0961CCA124090FDB00DC63CB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		09703EDA2400D421003BA478 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		098D06CD2404EB6400DE702B /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		098D06CF2404EBF600DE702B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		098D06D12404EC2C00DE702B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09E08FBC240A03B700D13CA4 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		6D2DBE83FE58B66629ED97E7 /* Pods-Solvit2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solvit2.release.xcconfig"; path = "Target Support Files/Pods-Solvit2/Pods-Solvit2.release.xcconfig"; sourceTree = "<group>"; };
 		CBF3757E61B4F7647E23A012 /* Pods_Solvit2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solvit2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1832E30CBA9E91F895CF35B /* Pods-Solvit2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solvit2.debug.xcconfig"; path = "Target Support Files/Pods-Solvit2/Pods-Solvit2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,8 +95,11 @@
 			children = (
 				093E05F023F5434C0057FB42 /* Login.swift */,
 				093E05F223F543CD0057FB42 /* Register.swift */,
+				09E08FBC240A03B700D13CA4 /* Login.swift */,
 				093E05F423F549C20057FB42 /* SelectCategories.swift */,
 				098D06CD2404EB6400DE702B /* FirebaseSession.swift */,
+				0961CC9D24090A2500DC63CB /* AskQuestionView.swift */,
+				0961CC9F24090E9200DC63CB /* AnswerView.swift */,
 				098D06D32404EC6400DE702B /* Models */,
 				095E418C23F6B18000DEA54F /* Home.swift */,
 				095E418E23F6B35700DEA54F /* Messages.swift */,
@@ -119,6 +130,7 @@
 			children = (
 				098D06CF2404EBF600DE702B /* Category.swift */,
 				098D06D12404EC2C00DE702B /* User.swift */,
+				0961CCA124090FDB00DC63CB /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,9 +269,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				098D06D22404EC2C00DE702B /* User.swift in Sources */,
+				09E08FBD240A03B700D13CA4 /* Login.swift in Sources */,
+				0961CCA224090FDB00DC63CB /* Question.swift in Sources */,
 				093E05DD23F53D260057FB42 /* AppDelegate.swift in Sources */,
+				0961CCA024090E9200DC63CB /* AnswerView.swift in Sources */,
 				095E418F23F6B35700DEA54F /* Messages.swift in Sources */,
 				095E419323F6B36600DEA54F /* UserProfile.swift in Sources */,
+				0961CC9E24090A2500DC63CB /* AskQuestionView.swift in Sources */,
 				093E05F523F549C20057FB42 /* SelectCategories.swift in Sources */,
 				095E419123F6B35E00DEA54F /* Notifications.swift in Sources */,
 				093E05DF23F53D260057FB42 /* SceneDelegate.swift in Sources */,

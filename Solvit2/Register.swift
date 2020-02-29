@@ -14,6 +14,7 @@ import FirebaseAuth
 struct Register: View {
     @EnvironmentObject var session: FirebaseSession
     @State private var email = ""
+    @State private var username = ""
     @State private var password = ""
     @State private var confirmedPassword = ""
     @State private var errorMessage = ""
@@ -24,9 +25,15 @@ struct Register: View {
     }
     
     var body: some View {
-        NavigationView {
             VStack(alignment: .leading, spacing: 15){
                 Spacer()
+                
+                TextField("Username", text: $username)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(20.0)
+                
                 TextField("Email Address", text: $email)
                     .autocapitalization(.none)
                     .padding()
@@ -54,18 +61,11 @@ struct Register: View {
                                     return
                                 }
                                 
-                                self.session.createUser()
-                                
-//                                let db = Firestore.firestore()
-//                                db.collection("users").document("LA").setData([
-//                                    "email": self.email
-//                                    ]) { err in
-//                                        if let err = err {
-//                                            print("Error writing document: \(err)")
-//                                        } else {
-//                                            self.selection = 1
-//                                        }
-//                                    }
+                                self.session.createUser() {
+                                    self.email = ""
+                                    self.password = ""
+                                    self.selection = 1
+                                }
                             }
                         } else {
                             self.errorMessage = "Passwords do not match."
@@ -90,7 +90,6 @@ struct Register: View {
             )
             .edgesIgnoringSafeArea(.all))
             .navigationBarTitle("Register")
-        }
     }
 }
 
